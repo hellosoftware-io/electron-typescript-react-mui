@@ -1,0 +1,67 @@
+{
+  "name": "electron-typescript-react",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lightweight, modern boilerplate built with electron, typescript, and react.",
+  "main": "./dist/main.js",
+  "scripts": {
+    "dev": "npm-run-all -p dev:react electron:serve",
+    "dev:electron": "cross-env NODE_ENV=development webpack --config webpack/electron.webpack.ts --mode development && npm run start:electron",
+    "dev:react": "cross-env NODE_ENV=development webpack-dev-server --config webpack/react.webpack.ts --mode development",
+    "electron:serve": "wait-on http-get://localhost:4000/ && npm run dev:electron",
+    "start:electron": "electron .",
+    "build": "npm-run-all build:electron build:react",
+    "build:run": "npm-run-all build start:electron",
+    "build:electron": "webpack --config webpack/electron.webpack.ts",
+    "build:react": "webpack --config webpack/react.webpack.ts",
+    "package": "npm-run-all build package:dist",
+    "package:dist": "electron-builder --dir"
+  },
+  "keywords": [],
+  "author": "HelloSoftware",
+  "license": "MIT",
+  "dependencies": {
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
+    "@material-ui/core": "^5.0.0-alpha.27",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.35",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "cross-env": "^7.0.3",
+    "electron": "^12.0.1",
+    "electron-builder": "^22.10.5",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-react": "^7.23.0",
+    "html-webpack-plugin": "^5.3.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "ts-loader": "^8.0.18",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3",
+    "wait-on": "^5.3.0",
+    "webpack": "^5.27.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^4.0.0-beta.1"
+  },
+  "build": {
+    "appId": "com.company.app",
+    "productName": "App Name",
+    "mac": {
+      "category": "public.app-category.video"
+    },
+    "directories": {
+      "output": "packages"
+    },
+    "files": [
+      "package.json",
+      "dist/**"
+    ]
+  }
+}
