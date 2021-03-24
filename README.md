@@ -1,6 +1,6 @@
 # Electron, TypeScript, Material-UI, React Boilerplate
 
-Lightweight, modern boilerplate built with electron, typescript, react, and material-ui.
+Modern and lightweight boilerplate built with electron, typescript, react, and material-ui.
 
 ## Major technologies
 
@@ -25,7 +25,7 @@ Lightweight, modern boilerplate built with electron, typescript, react, and mate
 1. Download or clone the repo
 
 ```sh
-git clone https://github.com/hellosoftware-io/electron-typescript-react myapp
+git clone https://github.com/hellosoftware-io/electron-typescript-react-material-ui myapp
 ```
 
 2. Navigate to the project directory in your command line
