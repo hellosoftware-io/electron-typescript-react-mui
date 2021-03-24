@@ -21,6 +21,9 @@ const theme = createMuiTheme({
       fontWeight: 400,
       color: "#9EEAF9",
     },
+    body1: {
+      color: "#9EEAF9",
+    },
   },
 });
 
