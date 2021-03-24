@@ -9,7 +9,7 @@ const config = {
     extensions: [".tsx", ".ts", ".js"],
     mainFields: ["main", "module", "browser"],
   },
-  entry: path.resolve(rootPath, "src/renderer", "App.tsx"),
+  entry: path.resolve(rootPath, "src/renderer", "index.tsx"),
   target: "electron-renderer",
   devtool: "source-map",
   module: {

@@ -2,15 +2,10 @@ import { Box } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider } from "@material-ui/core/styles";
 import React from "react";
-import { render } from "react-dom";
-import Greetings from "./components/Greetings";
-import theme from "./theme";
+import theme from "../theme";
+import Greetings from "./Greetings";
 
-const mainElement = document.createElement("div");
-mainElement.setAttribute("id", "root");
-document.body.appendChild(mainElement);
-
-const App = () => {
+export default function App(): JSX.Element {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -25,6 +20,4 @@ const App = () => {
       </Box>
     </ThemeProvider>
   );
-};
-
-render(<App />, mainElement);
+}
