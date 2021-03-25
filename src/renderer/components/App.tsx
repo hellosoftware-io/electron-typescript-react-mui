@@ -7,6 +7,8 @@ import Greetings from "./Greetings";
 
 export default function App(): JSX.Element {
   return (
+    // Setup theme and css baseline for the Material-UI app
+    // https://material-ui.com/customization/theming/
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box
@@ -15,6 +17,7 @@ export default function App(): JSX.Element {
         }}
       >
         <main>
+          {/* This is where your app content should go */}
           <Greetings />
         </main>
       </Box>

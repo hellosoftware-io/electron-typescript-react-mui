@@ -2,7 +2,7 @@ import { Box, Container, Grid, Typography } from "@material-ui/core";
 import React from "react";
 import electronLogo from "../../../static/electron.svg";
 
-const Greetings: React.FC = () => {
+export default function Greetings(): JSX.Element {
   return (
     <Container maxWidth="md" sx={{ mt: 8 }}>
       <Grid container justifyContent="center">
@@ -16,6 +16,4 @@ const Greetings: React.FC = () => {
       </Typography>
     </Container>
   );
-};
-
-export default Greetings;
+}

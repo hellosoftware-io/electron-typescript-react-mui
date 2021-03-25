@@ -1,6 +1,7 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
-// Create a theme instance.
+// Create a Material-UI theme instance
+// https://material-ui.com/customization/theming/
 const theme = createMuiTheme({
   palette: {
     primary: {
