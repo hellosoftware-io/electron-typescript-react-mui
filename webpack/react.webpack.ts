@@ -1,9 +1,11 @@
+import HtmlWebpackPlugin from "html-webpack-plugin";
 import * as path from "path";
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+import { Configuration } from "webpack";
 
 const rootPath = path.resolve(__dirname, "..");
 
-const config = {
+const config: Configuration = {
+  mode: "development",
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
     mainFields: ["main", "module", "browser"],
@@ -16,6 +18,7 @@ const config = {
       {
         test: /\.(js|ts|tsx)$/,
         exclude: /node_modules/,
+        include: /src/,
         use: {
           loader: "ts-loader",
         },
@@ -27,8 +30,8 @@ const config = {
     ],
   },
   devServer: {
-    static: path.join(rootPath, "dist/renderer"),
-    dev: {
+    static: {
+      directory: __dirname + "/dist/renderer",
       publicPath: "/",
     },
     port: 4000,
@@ -36,11 +39,10 @@ const config = {
     compress: true,
   },
   output: {
-    path: path.resolve(rootPath, "dist/renderer"),
-    filename: "js/[name].js",
-    publicPath: "./",
+    path: __dirname + "/dist/renderer",
+    filename: "react.js",
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [new HtmlWebpackPlugin({ template: "./index.html" })],
 };
 
 export default config;

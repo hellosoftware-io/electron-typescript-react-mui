@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Lightweight, modern boilerplate built with electron, typescript, and react.",
-  "main": "./dist/main.js",
+  "main": "./dist/electron.js",
   "scripts": {
     "dev": "npm-run-all -p dev:react electron:serve",
     "dev:electron": "cross-env NODE_ENV=development webpack --config webpack/electron.webpack.ts --mode=development && npm run start:electron",
@@ -21,8 +21,8 @@
   "author": "HelloSoftware",
   "license": "MIT",
   "dependencies": {
-    "@emotion/react": "^11.1.5",
-    "@emotion/styled": "^11.3.0",
+    "@emotion/react": "^11.6.0",
+    "@emotion/styled": "^11.6.0",
     "@material-ui/core": "5.0.0-alpha.28",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
@@ -30,7 +30,8 @@
   "devDependencies": {
     "@types/node": "^16.11.7",
     "@types/react": "^17.0.34",
-    "@types/react-dom": "^17.0.3",
+    "@types/react-dom": "^17.0.11",
+    "@types/webpack-dev-server": "^4.3.1",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
     "@typescript-eslint/parser": "^5.3.1",
     "cross-env": "^7.0.3",
@@ -46,9 +47,9 @@
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4",
     "wait-on": "^6.0.0",
-    "webpack": "^5.33.2",
-    "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^4.0.0-beta.1"
+    "webpack": "^5.64.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.5.0"
   },
   "build": {
     "appId": "com.company.app",
