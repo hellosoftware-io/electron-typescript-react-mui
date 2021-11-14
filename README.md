@@ -1,14 +1,26 @@
-# Electron, TypeScript, Material-UI, React Boilerplate
+# Electron, TypeScript, MUI (formerly Material-UI), React Boilerplate
 
 Modern and lightweight boilerplate built with electron, typescript, react, webpack, and material-ui. This also demonstrates live-reloading and static images.
 
 ## Major technologies
 
 - [React.js 17](https://reactjs.org/)
-- [Electron 12](https://www.electronjs.org/)
-- [Material-UI 5](https://next.material-ui.com/)
+- [Electron 15](https://www.electronjs.org/)
+- [MUI 5](https://next.material-ui.com/) (formerly Material-UI)
 - [Webpack 5](https://webpack.js.org/)
 - Typescript, ESLint, and Prettier are used to improve the developer experience
+
+## Requires
+
+- [Node.js 16.x](https://nodejs.org/en/)
+- [NPM >= 7.x](https://github.com/npm/cli)
+
+## Recommended tools
+
+- [Visual Studio Code](https://code.visualstudio.com/)
+  - [Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (formatting)
+  - [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (error checking)
+- [NVM](https://github.com/nvm-sh/nvm) (mac only. helps to manage multiple node.js versions on your machine)
 
 ## Getting Started
 
@@ -18,14 +30,19 @@ Modern and lightweight boilerplate built with electron, typescript, react, webpa
 git clone https://github.com/hellosoftware-io/electron-typescript-react-material-ui myapp
 ```
 
-2. Using NPM 7, run the following command to install dependencies
+2. Navigate to the project root
 
 ```sh
 cd myapp
+```
+
+3. Using NPM 7+, run the following command to install dependencies
+
+```sh
 npm install
 ```
 
-3. Run the following command to build and start the development version of your app with live reloading.
+4. Run the following command to build and start the development version of your app with live reloading.
 
 ```sh
 npm run dev

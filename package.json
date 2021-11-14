@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Lightweight, modern boilerplate built with electron, typescript, and react.",
-  "main": "./dist/electron.js",
+  "main": "./dist/main.js",
   "scripts": {
     "dev": "npm-run-all -p dev:react electron:serve",
     "dev:electron": "cross-env NODE_ENV=development webpack --config webpack/electron.webpack.ts --mode=development && npm run start:electron",
@@ -23,7 +23,7 @@
   "dependencies": {
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
-    "@material-ui/core": "5.0.0-alpha.28",
+    "@mui/material": "^5.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },

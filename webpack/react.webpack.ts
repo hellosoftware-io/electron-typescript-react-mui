@@ -5,7 +5,6 @@ import { Configuration } from "webpack";
 const rootPath = path.resolve(__dirname, "..");
 
 const config: Configuration = {
-  mode: "development",
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
     mainFields: ["main", "module", "browser"],
@@ -31,7 +30,7 @@ const config: Configuration = {
   },
   devServer: {
     static: {
-      directory: __dirname + "/dist/renderer",
+      directory: path.resolve(rootPath, "dist/renderer"),
       publicPath: "/",
     },
     port: 4000,
@@ -39,10 +38,12 @@ const config: Configuration = {
     compress: true,
   },
   output: {
-    path: __dirname + "/dist/renderer",
-    filename: "react.js",
+    path: path.resolve(rootPath, "dist/renderer"),
+    filename: "js/[name].js",
   },
-  plugins: [new HtmlWebpackPlugin({ template: "./index.html" })],
+  plugins: [
+    new HtmlWebpackPlugin({ template: path.resolve(rootPath, "index.html") }),
+  ],
 };
 
 export default config;

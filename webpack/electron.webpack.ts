@@ -4,7 +4,6 @@ import { Configuration } from "webpack";
 const rootPath = path.resolve(__dirname, "..");
 
 const config: Configuration = {
-  mode: "development",
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
@@ -23,9 +22,12 @@ const config: Configuration = {
       },
     ],
   },
+  node: {
+    __dirname: false,
+  },
   output: {
     path: path.resolve(rootPath, "dist"),
-    filename: "electron.js",
+    filename: "[name].js",
   },
 };
 
