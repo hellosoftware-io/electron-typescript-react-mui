@@ -54,5 +54,3 @@ app.on("activate", () => {
     createWindow();
   }
 });
-
-app.allowRendererProcessReuse = true;
