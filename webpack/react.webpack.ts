@@ -1,8 +1,13 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import * as path from "path";
-import { Configuration } from "webpack";
+import { Configuration as WebpackConfiguration } from "webpack";
+import { Configuration as WebpackDevServerConfiguration } from "webpack-dev-server";
 
 const rootPath = path.resolve(__dirname, "..");
+
+interface Configuration extends WebpackConfiguration {
+  devServer?: WebpackDevServerConfiguration;
+}
 
 const config: Configuration = {
   resolve: {

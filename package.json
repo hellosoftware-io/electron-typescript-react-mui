@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "npm-run-all -p dev:react electron:serve",
     "dev:electron": "cross-env NODE_ENV=development webpack --config webpack/electron.webpack.ts --mode=development && npm run start:electron",
-    "dev:react": "cross-env NODE_ENV=development webpack-dev-server --config webpack/react.webpack.ts --mode=development",
+    "dev:react": "cross-env NODE_ENV=development webpack serve --config webpack/react.webpack.ts --mode=development",
     "electron:serve": "wait-on http-get://localhost:4000/ && npm run dev:electron",
     "start:electron": "electron .",
     "build": "npm-run-all build:electron build:react",
@@ -21,35 +21,35 @@
   "author": "HelloSoftware",
   "license": "MIT",
   "dependencies": {
-    "@emotion/react": "^11.6.0",
+    "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
-    "@mui/material": "^5.1.0",
+    "@mui/material": "^5.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@types/node": "^16.11.7",
-    "@types/react": "^17.0.34",
+    "@types/node": "^16.11.22",
+    "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
-    "@types/webpack-dev-server": "^4.3.1",
-    "@typescript-eslint/eslint-plugin": "^5.3.1",
-    "@typescript-eslint/parser": "^5.3.1",
+    "@types/webpack-dev-server": "^4.7.2",
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
     "cross-env": "^7.0.3",
-    "electron": "^15.3.1",
-    "electron-builder": "^22.13.1",
-    "eslint": "^8.2.0",
+    "electron": "^17.0.0",
+    "electron-builder": "^22.14.13",
+    "eslint": "^8.8.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-react": "^7.27.0",
+    "eslint-plugin-react": "^7.28.0",
     "html-webpack-plugin": "^5.5.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.4.1",
+    "prettier": "^2.5.1",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.4.0",
-    "typescript": "^4.4.4",
+    "typescript": "^4.5.5",
     "wait-on": "^6.0.0",
-    "webpack": "^5.64.0",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.5.0"
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
   },
   "build": {
     "appId": "com.company.app",
@@ -64,5 +64,9 @@
       "package.json",
       "dist/**"
     ]
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.13.0"
   }
 }
