@@ -6,15 +6,6 @@ on:
       - "v[0-9].[0-9]+.[0-9]+"
 
 jobs:
-  # create_release:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Create release
-  #       uses: softprops/action-gh-release@v1
-  #       with:
-  #         draft: true
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   build_and_upload:
     runs-on: ${{ matrix.os }}
     strategy:
@@ -32,11 +23,20 @@ jobs:
         run: npm run package
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: softprops/action-gh-release@v1
+      - name: Cleanup artifacts
+        run: npx rimraf "packages/!(*.exe|*.dmg)"
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v1
         with:
-          draft: false
-          files: |
-            packages/*.exe
-            packages/*.dmg
+          name: ${{ matrix.os }}
+          path: packages
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          files: "packages/**"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
