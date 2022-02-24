@@ -29,8 +29,11 @@ jobs:
   #     env:
   #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  build_on_win:
-    runs-on: windows-latest
+  release:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 16.x
@@ -50,5 +53,6 @@ jobs:
           draft: true
           files: |
             packages/*.exe
+            packages/*.dmg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
