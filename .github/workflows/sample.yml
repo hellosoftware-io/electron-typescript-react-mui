@@ -34,7 +34,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: softprops/action-gh-release@v1
         with:
-          draft: true
+          draft: false
           files: |
             packages/*.exe
             packages/*.dmg
