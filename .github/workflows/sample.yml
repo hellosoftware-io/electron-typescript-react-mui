@@ -49,6 +49,6 @@ jobs:
         with:
           draft: true
           files: |
-            packages/**/*.exe
+            packages/*.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
