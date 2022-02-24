@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  release:
+  create_release:
     runs-on: ubuntu-latest
     steps:
       - name: Create release
@@ -17,8 +17,8 @@ jobs:
           draft: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  build:
-    needs: release
+  build_and_upload:
+    needs: create_release
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -35,8 +35,9 @@ jobs:
         run: npm run package
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-gh-release@v1
         with:
+          tag_name: ${{ needs.create_release.outputs.tag-name }}
           files: |
             packages/*.exe
             packages/*.dmg
