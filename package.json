@@ -1,6 +1,6 @@
 {
   "name": "electron-typescript-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Lightweight, modern boilerplate built with electron, typescript, and react.",
   "main": "./dist/main.js",
