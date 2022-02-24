@@ -1,6 +1,6 @@
 {
   "name": "electron-typescript-react",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "description": "Lightweight, modern boilerplate built with electron, typescript, and react.",
   "main": "./dist/main.js",
@@ -15,7 +15,8 @@
     "build:electron": "webpack --config webpack/electron.webpack.ts --mode=production",
     "build:react": "webpack --config webpack/react.webpack.ts --mode=production",
     "package": "npm-run-all build package:dist",
-    "package:dist": "electron-builder --dir"
+    "package:dir": "electron-builder --dir",
+    "package:dist": "electron-builder"
   },
   "keywords": [],
   "author": "HelloSoftware",
