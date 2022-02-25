@@ -2,7 +2,7 @@
   "name": "electron-typescript-react",
   "version": "1.0.18",
   "private": true,
-  "description": "Lightweight, modern boilerplate built with electron, typescript, and react.",
+  "description": "Lightweight, modern boilerplate built with electron, typescript, and react..",
   "main": "./dist/main.js",
   "scripts": {
     "dev": "npm-run-all -p dev:react electron:serve",
