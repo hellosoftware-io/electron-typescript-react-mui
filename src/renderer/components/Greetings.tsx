@@ -9,7 +9,7 @@ export default function Greetings(): JSX.Element {
         <Box component="img" src={electronLogo} width={200} height={200} />
       </Grid>
       <Typography variant="h1" textAlign="center" sx={{ mt: 8 }}>
-        Electron boilerplate with TypeScript, React, and Material-UI
+        Electron boilerplate with TypeScript, React, and MUI
       </Typography>
       <Typography variant="body1" textAlign="center" sx={{ mt: 2 }}>
         Made by HelloSoftware

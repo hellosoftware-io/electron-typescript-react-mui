@@ -2,6 +2,8 @@
 
 Modern and lightweight boilerplate built with electron, typescript, react, webpack, and mui. This also demonstrates live-reloading and static images.
 
+![Screenshot](/screenshot-1.png)
+
 ## Major technologies
 
 - [React.js 17](https://reactjs.org/)
