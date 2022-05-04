@@ -6,8 +6,8 @@ Modern and lightweight boilerplate built with electron, typescript, react, webpa
 
 ## Major technologies
 
-- [React.js 17](https://reactjs.org/)
-- [Electron 17](https://www.electronjs.org/)
+- [React.js 18](https://reactjs.org/)
+- [Electron 18](https://www.electronjs.org/)
 - [MUI 5](https://mui.com/) (formerly Material-UI)
 - [Webpack 5](https://webpack.js.org/)
 - Typescript, ESLint, and Prettier are used to improve the developer experience
